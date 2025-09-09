@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vision7</title>
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
     <link rel="icon" type="image/png" sizes="32x32" href="./imagens/logo.png">
 </head>
 <body>
@@ -23,16 +22,35 @@
         <a href="https://wa.me/5548920024952" target="_blank" class="cta-whatsapp">Fale com um especialista</a>
     </section>
     <section class="ads-section">
-        <h2>A forma correta de captar seus clientes</h2>
-        <div class="ad-card">
-            <img src="./imagens/imagem8.jpg" alt="imagem-google">
-            <p>Na Visio7, gerenciamos suas campanhas no Google Ads para colocar sua marca na frente das pessoas certas no momento exato em que elas estão buscando seus produtos ou serviços. Criamos estratégias personalizadas, escolhemos as palavras-chave ideais e ajustamos lances para maximizar resultados. Monitoramos cada clique, conversão e ROI em tempo real, garantindo campanhas eficientes que aumentam visibilidade, atraem clientes qualificados e geram vendas consistentes para o seu negócio.</p>
-        </div>
-        <div class="ad-card">
-            <img src="./imagens/imagem9.jpg" alt="imagem-facebook">
-            <p>Na Visio7, gerenciamos suas campanhas no Facebook Ads para que sua marca alcance exatamente as pessoas certas. Criamos estratégias personalizadas, segmentamos por interesses, localização e comportamento, e monitoramos os resultados em tempo real. Assim, ajudamos sua empresa a atrair clientes qualificados, aumentar vendas e maximizar o retorno do investimento de forma inteligente e eficiente.</p>
-        </div>
-    </section>
+  <h1>Transforme cliques em clientes todos os dias</h1>
+
+  <div class="btn-grupo">
+    <button class="btn active" onclick="mostrartexto(1)">Campanhas no Google Ads</button>
+    <button class="btn" onclick="mostrartexto(2)">Campanhas no Facebook Ads</button>
+  </div>
+
+  <div class="ad-card">
+  <!-- Conteúdo Google -->
+  <div id="conteudogoogle" class="ad-text mostrar">
+    <p>Na Visio7, gerenciamos suas campanhas no <b>Google Ads</b> para colocar sua marca na frente das pessoas certas no momento exato em que elas estão buscando seus produtos ou serviços. Criamos estratégias personalizadas, escolhemos as palavras-chave ideais e ajustamos lances para maximizar resultados. Monitoramos cada clique, conversão e ROI em tempo real, garantindo campanhas eficientes que aumentam visibilidade, atraem clientes qualificados e geram vendas consistentes para o seu negócio.</p>
+  </div>
+
+  <!-- Conteúdo Facebook -->
+  <div id="conteudofacebook" class="ad-text">
+    <p>Na Visio7, gerenciamos suas campanhas no <b>Facebook Ads</b> para que sua marca alcance exatamente as pessoas certas. Criamos estratégias personalizadas, segmentamos por interesses, localização e comportamento, e monitoramos os resultados em tempo real. Assim, ajudamos sua empresa a atrair clientes qualificados, aumentar vendas e maximizar o retorno do investimento de forma inteligente e eficiente.</p>
+  </div>
+
+  <!-- Imagem Google -->
+  <div id="imagemgoogle" class="ad-image mostrar">
+    <img src="./imagens/imagem8.jpg" alt="imagem-google">
+  </div>
+
+  <!-- Imagem Facebook -->
+  <div id="imagemfacebook" class="ad-image">
+    <img src="./imagens/imagem9.jpg" alt="imagem-facebook">
+  </div>
+</div>
+</section>
     <section id="serviços-overview" class="serviços-overview">
         <div class="cards-container">
             <div class="card">
@@ -148,5 +166,6 @@
                 <p>&copy; 2025 Vision7 - Todos os direitos reservados</p>
             </div>
         </footer>
+        <script src="script.js"></script>
     </body>
 </html>

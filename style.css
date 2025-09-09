@@ -8,13 +8,13 @@ body {
   font-family: 'MinhaFonte', Arial, Helvetica, sans-serif;
   line-height: 1.6;
   color: #333;
-  background: #ffffff;
+  background: #cb75e0;
   padding-top: 50px;
 }
 
 @font-face {
     font-family: 'MinhaFonte';
-    src: url('fonts/Roboto-Black.ttf') format('woff2');
+    src: url('fonts/CF\ Arpine\ Demo.ttf') format('woff2');
     font-weight: 400;
     font-style: normal;
 }
@@ -31,7 +31,7 @@ nav {
   width: 100%;
   padding: 1rem 0;
   z-index: 1000;
-  background: linear-gradient(90deg, #6a4c93, #9b59b6);
+  background: #cb75e0;
   color: #fff;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   transition: all 0.3s;
@@ -48,10 +48,6 @@ nav ul li a {
   color: #fff;
   font-weight: bold;
   transition: color 0.3s;
-}
-
-nav ul li a:hover {
-  color: #f39c12;
 }
 
 .titulo {
@@ -96,32 +92,72 @@ nav ul li a:hover {
 }
 
 .ads-section {
+  background-color: #cb75e0; /* ou a cor que você quiser para o fundo */
+  padding: 3rem 1rem;
   text-align: center;
-  padding: 2rem;
+}
+
+.ads-section h1 {
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
 
 .ad-card {
-  margin: 2rem auto;
-  max-width: 600px;
+  background-color: #ffffff; /* fundo branco dentro da seção */
+  border: 2px solid #e0e0e0; /* borda em volta */
+  border-radius: 12px;       /* cantos arredondados */
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;            /* centraliza a caixa */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* sombra leve */
 }
 
-.ad-card img {
-  display: block;
-  margin: 0 auto 1rem auto;
+.ad-text {
+  flex: 1;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-align: justify;
+
+  /* Animação inicial */
+  display: none;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.ad-image {
+  flex: 1;
+  display: none; /* começa oculta */
+  justify-content: center;
+
+  /* Animação inicial */
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.ad-image img {
   max-width: 100%;
   height: auto;
   transition: transform 0.3s ease;
 }
 
-.ad-card img:hover {
+.ad-image img:hover {
   transform: scale(1.05);
 }
 
-.ad-card p {
-  text-align: center;
-  font-size: 1rem;
-  line-height: 1.5;
+/* Estado quando aparece */
+.ad-text.mostrar,
+.ad-image.mostrar {
+  display: block; /* ou flex no caso da imagem */
+  opacity: 1;
+  transform: translateY(0);
 }
+
 
 .cards-container {
   display: grid;
@@ -282,7 +318,7 @@ nav ul li a:hover {
 }
 
 .blog-section {
-  background-color: #ffffff;
+  background-color: #cb75e0;
 }
 
 .blog-cards {
@@ -447,4 +483,35 @@ nav ul li a:hover {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.btn-grupo {
+  display: inline-flex;
+  margin-bottom: 2rem;
+  border-radius: 50px;
+  overflow: hidden; /* força os botões a ficarem grudados */
+  justify-content: center; /* distribui dentro */
+}
+
+.btn {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 1rem;
+  background: #9b59b6;
+  color: white;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn:not(:last-child) {
+  border-right: 1px solid white; /* linha de separação sutil */
+}
+
+.btn:hover {
+  background: #884ea0; /* tom mais escuro no hover */
+}
+
+.btn.active {
+  background: #732d91; /* tom mais escuro quando ativo */
 }

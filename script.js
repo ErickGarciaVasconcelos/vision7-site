@@ -37,3 +37,49 @@ document.getElementById("form-contato").addEventListener("submit", function(even
     event.preventDefault(); // Impede o envio padrão do formulário
     enviarFormularioWhatsApp(); // Chama nossa função personalizada
 });
+
+// Botões do google e facebook ads
+
+function mostrartexto(opcao) {
+  const botoes = document.querySelectorAll(".btn");
+  const google = document.getElementById("conteudogoogle");
+  const facebook = document.getElementById("conteudofacebook");
+  const imgGoogle = document.getElementById("imagemgoogle");
+  const imgFacebook = document.getElementById("imagemfacebook");
+
+  // remove active dos botões
+  botoes.forEach(btn => btn.classList.remove("active"));
+
+  // esconde todos
+  [google, facebook, imgGoogle, imgFacebook].forEach(el => {
+    el.classList.remove("mostrar");
+    el.style.display = "none";
+  });
+
+  if (opcao === 1) {
+    google.style.display = "block";
+    imgGoogle.style.display = "flex";
+    setTimeout(() => {
+      google.classList.add("mostrar");
+      imgGoogle.classList.add("mostrar");
+    }, 50);
+    botoes[0].classList.add("active");
+  } else {
+    facebook.style.display = "block";
+    imgFacebook.style.display = "flex";
+    setTimeout(() => {
+      facebook.classList.add("mostrar");
+      imgFacebook.classList.add("mostrar");
+    }, 50);
+    botoes[1].classList.add("active");
+  }
+}
+
+// Ativa o Google por padrão depois que a página toda carrega
+window.addEventListener("DOMContentLoaded", () => {
+  mostrartexto(1);
+});
+
+
+
+
