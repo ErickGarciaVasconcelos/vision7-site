@@ -18,10 +18,9 @@
 
 .contato-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 2rem;
-  max-width: 1100px;
-  margin: 0 auto;
+  grid-template-columns: 1fr; /* só uma coluna agora */
+  max-width: 600px;           /* limite de largura */
+  margin: 0 auto;             /* centraliza horizontalmente */
 }
 
 /* Formulário */
