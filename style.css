@@ -56,13 +56,16 @@ nav ul li a:hover {
 
 .titulo {
   position: relative;
-  background: url("./imagens/Design\ sem\ nome.jpg") center top/cover no-repeat;
+  background: url("./imagens/teste.jpg") center top/cover no-repeat;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: subir 1s ease-out forwards;
 }
 
 .titulo h1 {
@@ -439,4 +442,9 @@ nav ul li a:hover {
         margin-bottom: 1rem;
     }
 }
-
+@keyframes subir {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
