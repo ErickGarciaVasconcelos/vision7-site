@@ -515,3 +515,32 @@ nav ul li a {
 .btn.active {
   background: #732d91; /* tom mais escuro quando ativo */
 }
+
+/* Estilos para telas menores (celulares) */
+@media (max-width: 768px) {
+  .ad-card {
+    flex-direction: column;   /* empilha em coluna */
+    text-align: center;       /* centraliza o texto */
+    padding: 1.5rem;
+  }
+
+  .ad-text {
+    text-align: center;       /* centraliza o texto */
+  }
+
+  .ad-image {
+    justify-content: center;  /* garante que a imagem fique centralizada */
+    margin-bottom: 1rem;      /* dá espaço entre a imagem e o texto */
+  }
+
+  .btn-grupo {
+    flex-direction: column;   /* se quiser que os botões fiquem um em cima do outro no mobile */
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .btn {
+    border-radius: 25px; /* arredonda melhor no mobile */
+    width: 80%;          /* ocupa boa parte da largura */
+  }
+}
