@@ -142,10 +142,15 @@
   font-size: 1.05rem;
   opacity: 0.95;
 }
-.sobre-cta .cta-principal {
+.sobre-cta .btn-cta {
   /* reutiliza .btn do seu site e só ajusta espaçamento */
-  margin-top: 0.5rem;
-  padding: 0.8rem 1.5rem;
-  background: #667;
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: #fff;
+  color: #6a4c93;
+  font-weight: 600;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
 }
 
