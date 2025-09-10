@@ -517,16 +517,19 @@ nav ul li a {
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.btn:not(:last-child) {
-  border-right: 1px solid #300131; /* linha de separação sutil */
+.btn-google {
+  background: linear-gradient(45deg, #4285F4, #34A853);
+  color: #fff;
 }
-
-.btn:hover {
-  background: #884ea0; /* tom mais escuro no hover */
+.btn-google:hover {
+  background: linear-gradient(45deg, #34A853, #4285F4);
 }
-
-.btn.active {
-  background: #732d91; /* tom mais escuro quando ativo */
+.btn-facebook {
+  background: linear-gradient(45deg, #1877F2, #0A4CA5);
+  color: #fff;
+}
+.btn-facebook:hover {
+  background: linear-gradient(45deg, #0A4CA5, #1877F2);
 }
 
 /* Estilos para telas menores (celulares) */
