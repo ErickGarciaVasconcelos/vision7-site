@@ -80,6 +80,17 @@ window.addEventListener("DOMContentLoaded", () => {
   mostrartexto(1);
 });
 
+function lerTexto(id) {
+    // Pega o texto do card específico
+    const texto = document.getElementById(id).innerText;
+    const fala = new SpeechSynthesisUtterance(texto);
+    fala.lang = "pt-BR"; // português do Brasil
+    fala.rate = 1; // velocidade (1 = normal)
+    fala.pitch = 1; // tom da voz
+    window.speechSynthesis.speak(fala);
+  }
 
-
+  function pararLeitura() {
+    window.speechSynthesis.cancel();
+  }
 
