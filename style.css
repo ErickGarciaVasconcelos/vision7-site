@@ -50,45 +50,56 @@ nav ul li a {
   transition: color 0.3s;
 }
 
+/* SECTION com fundo e layout em coluna */
 .titulo {
-  position: relative;
   background: url("./imagens/teste.jpg") center top/cover no-repeat;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: flex;              /* ativa o flexbox */
+  align-items: center;        /* centraliza verticalmente */
+  justify-content: center;    /* centraliza no eixo horizontal */
+  gap: 2rem;                  /* espaço entre colunas */
+  padding: 2rem;
+}
+
+.titulo-conteudo, 
+.titulo-imagem {
   text-align: center;
-  opacity: 0;
-  transform: translateY(50px);
-  animation: subir 1s ease-out forwards;
 }
 
-.titulo h1 {
+.titulo-coluna {
+  display: flex;
+  flex-direction: column;  /* um embaixo do outro */
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Títulos */
+.titulo-conteudo h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-  color: #fff;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  max-width: 100%;
+}
+.titulo-conteudo h2 {
+  font-size: 1.25rem;
+  color: #ffffff;
 }
 
-.titulo h2 {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
-  color: #fff;
-}
-
+/* Botão WhatsApp */
 .cta-whatsapp {
-  background: #9b59b6; 
+  display: inline-block;
+  background: #25D366;
   color: #fff;
-  padding: 0.8rem 1.5rem;
-  border-radius: 6px;
+  font-size: 1.2rem;
   font-weight: bold;
-  transition: background 0.3s;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.3s ease;
 }
 
 .cta-whatsapp:hover {
-  background: #6a4c93;
+  background: #1ebd5a;
 }
 
 .ads-section {
@@ -111,7 +122,8 @@ nav ul li a {
   margin: 0 auto;            /* centraliza a caixa */
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+  text-align: center;
   gap: 2rem;
   box-shadow: 0 4px 12px rgba(0,0,0,0.08); /* sombra leve */
 }
@@ -505,7 +517,7 @@ nav ul li a {
 }
 
 .btn:not(:last-child) {
-  border-right: 1px solid white; /* linha de separação sutil */
+  border-right: 1px solid #300131; /* linha de separação sutil */
 }
 
 .btn:hover {
@@ -543,4 +555,177 @@ nav ul li a {
     border-radius: 25px; /* arredonda melhor no mobile */
     width: 80%;          /* ocupa boa parte da largura */
   }
+}
+.overlay-img {
+  width: 750px;
+  max-width: 100%;
+  margin: 1rem auto;
+}
+/* Container do gráfico */
+
+.grafico-animado {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end; /* encosta no "chão" */
+}
+
+.grafico-animado span {
+  display: block;
+  width: 60px;
+  height: 600px;        
+  border-radius: 15px;
+  transform-origin: bottom;
+  transform: scaleY(0.2);  /* começa baixinha */
+  animation: crescer 1.5s ease forwards;
+}
+
+/* Escada com delays e alturas finais diferentes */
+.grafico-animado span:nth-child(1) { 
+  background: #EA4335;       /* cor da nova coluna */
+  animation-delay: 0s;
+  --escala-final: 0.2;    /* menor ainda */
+ 
+}
+
+.grafico-animado span:nth-child(2) { 
+  background: #4285F4;
+  animation-delay: 0.2s;
+  --escala-final: 0.4;
+}
+.grafico-animado span:nth-child(3) { 
+  background: #EA4335;
+  animation-delay: 0.4s;
+  --escala-final: 0.6;
+}
+.grafico-animado span:nth-child(4) { 
+  background: #FBBC05;
+  animation-delay: 0.6s;
+  --escala-final: 0.8;
+}
+.grafico-animado span:nth-child(5) { 
+  background: #34A853;
+  animation-delay: 0.8s;
+  --escala-final: 1;
+}
+
+/* animação */
+@keyframes crescer {
+  from { transform: scaleY(0.2); }
+  to   { transform: scaleY(var(--escala-final)); }
+}
+/* 🌍 Telas muito grandes (monitores 4K, ultra-wide) */
+@media (min-width: 1920px) {
+  .titulo {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+}
+
+/* 💻 Desktops médios (1440px até 1919px) */
+@media (max-width: 1919px) {
+  .titulo {
+    padding: 2rem 4rem;
+    gap: 1.5rem;
+  }
+}
+
+/* 💻 Notebooks e desktops menores (1366px até 1439px) */
+@media (max-width: 1439px) {
+  .overlay-img {
+    max-width: 320px;
+  }
+  .cta-whatsapp {
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+  }
+}
+
+/* 📱 Tablets na horizontal (1024px até 1365px) */
+@media (max-width: 1365px) {
+  .titulo {
+    padding: 1.5rem;
+    gap: 1rem;
+  }
+  .overlay-img {
+    max-width: 280px;
+  }
+}
+
+/* 📱 Tablets na vertical (768px até 1023px) */
+@media (max-width: 1023px) {
+  .titulo {
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+  }
+  .overlay-img {
+    max-width: 250px;
+  }
+  .grafico-animado {
+    display: none; /* opcional no tablet */
+  }
+}
+
+/* 📱 Celulares grandes (425px até 767px) */
+@media (max-width: 767px) {
+  .overlay-img {
+    max-width: 200px;
+  }
+  .cta-whatsapp {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+/* 📱 Celulares médios (375px até 424px) */
+@media (max-width: 424px) {
+  .overlay-img {
+    max-width: 180px;
+  }
+  .cta-whatsapp {
+    font-size: 0.85rem;
+  }
+}
+
+/* 📱 Celulares pequenos (320px até 374px) */
+@media (max-width: 374px) {
+  .overlay-img {
+    max-width: 150px;
+  }
+  .cta-whatsapp {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100px); /* começa fora da tela, à esquerda */
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0); /* posição final */
+  }
+}
+
+/* Aplica no título */
+.ads-section h1, .titulo {
+  animation: slideInLeft 1s ease forwards;
+}
+
+/* Aplica no botão WhatsApp, com delay */
+.cta-whatsapp {
+  animation: slideInLeft 1s ease forwards;
+  animation-delay: 0.3s; /* atraso de 300ms */
+}
+
+@keyframes sobeDesce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); } /* sobe */
+  100% { transform: translateY(0); }     /* volta para posição */
+}
+
+.grafico-animado span.animar {
+  animation: sobeDesce 0.6s ease infinite;
 }
